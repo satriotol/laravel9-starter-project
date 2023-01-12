@@ -3,14 +3,14 @@
     <div class="app-sidebar">
         <div class="side-header">
             <a class="header-brand1" href="{{ route('dashboard') }}">
-                {{-- <img src="{{ asset('backend_assets/images/logoinspektorat.png') }}" class="header-brand-img desktop-logo"
+                <img src="{{ asset('backend_assets/images/LambangSemarang.png') }}" class="header-brand-img desktop-logo"
                     alt="logo">
-                <img src="{{ asset('backend_assets/images/pemkotsmg.png') }}" class="header-brand-img toggle-logo"
-                    alt="logo"> --}}
+                <img src="{{ asset('backend_assets/images/LambangSemarang.png') }}" class="header-brand-img toggle-logo"
+                    alt="logo">
                 <img src="{{ asset('backend_assets/images/LambangSemarang.png') }}" class="header-brand-img light-logo"
                     alt="logo">
-                <img src="{{ asset('backend_assets/images/logoinspektorat.png') }}" class="header-brand-img light-logo1"
-                    alt="logo">
+                <img src="{{ asset('backend_assets/images/LambangSemarang.png') }}" style="width:2rem"
+                    class="header-brand-img light-logo1" alt="logo">
             </a>
             <!-- LOGO -->
         </div>
@@ -33,12 +33,12 @@
                         <h3>User Management</h3>
                     </li>
                 @endcan
-                {{-- @can('user-index') --}}
+                @can('user-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['user.*']) }}" href="{{ route('user.index') }}"><i
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">User</span></a>
                     </li>
-                {{-- @endcan --}}
+                @endcan
                 @can('role-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['role.*']) }}" href="{{ route('role.index') }}"><i
