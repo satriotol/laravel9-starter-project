@@ -1,0 +1,230 @@
+/* Remove Chrome Input Field's Unwanted Yellow Background Color */
+input:-webkit-autofill, 
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+::-webkit-input-placeholder { / Chrome/Opera/Safari /
+  color: #000 !important;
+}
+::-moz-placeholder { / Firefox 19+ /
+  color: #000 !important;
+}
+::-ms-input-placeholder { / IE 10+ /
+  color: #000 !important;
+}
+::-moz-placeholder { / Firefox 18- /
+  color: #000 !important;
+}
+
+
+/* Jquery ui select css */
+.cart-bottom .ui-state-default {
+    width: 100% !important;
+}
+.ui-selectmenu-open .ui-widget-content {
+    border: 1px solid #f60035 !important;
+    background: #ffffff !important;
+    color: #222222 !important;
+    border-radius: 0 !important;
+}
+
+/* Jquery ui select hover bg css */
+.ui-selectmenu-open .ui-widget-content .ui-state-focus {
+    border: 1px solid #f60035 !important;
+    background: #f60035 !important;
+    font-weight: normal !important;
+    color: #272727 !important;
+    font-size: 16px !important;
+}
+/* Jquery ui select hover some change css */
+.ui-selectmenu-open .ui-menu .ui-menu-item {
+    position: relative !important;
+    margin: 0;
+    padding: 5px 15px !important;
+    cursor: pointer !important;
+}
+
+
+
+
+
+#contact-form input[type="text"].error{
+  border-color: red;    
+}
+#contact-form input[type="email"].error{
+  border-color: red;    
+}
+#contact-form select.error {
+  border-color: red;
+}
+#contact-form textarea.error{
+  border-color: red;    
+}
+#contact-form label.error {
+  display: none !important;
+}
+
+
+#faq-form input[type="text"].error{
+  border-color: red;    
+}
+#faq-form input[type="email"].error{
+  border-color: red;    
+}
+#faq-form select.error {
+  border-color: red;
+}
+#faq-form textarea.error{
+  border-color: red;    
+}
+#faq-form label.error {
+  display: none !important;
+}
+
+
+#add-comment-form input[type="text"].error{
+  border-color: red;    
+}
+#add-comment-form input[type="email"].error{
+  border-color: red;    
+}
+#add-comment-form select.error {
+  border-color: red;
+}
+#add-comment-form textarea.error{
+  border-color: red;    
+}
+#add-comment-form label.error {
+  display: none !important;
+}
+
+
+#review-form input[type="text"].error{
+  border-color: red;    
+}
+#review-form input[type="email"].error{
+  border-color: red;    
+}
+#review-form select.error {
+  border-color: red;
+}
+#review-form textarea.error{
+  border-color: red;    
+}
+#review-form label.error {
+  display: none !important;
+}
+
+
+/*________________Html 5 lightbox css_____ */
+#html5-watermark {
+    background: #f60035;
+    display: none !important;
+    z-index: 9999999999;
+}
+
+/*________________Language Switcher css_____ */
+.language-switcher #polyglotLanguageSwitcher ul.dropdown {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: #2b2c36;
+  border-bottom: 1px solid #f60035;
+  border-image: none;
+  border-left: 1px solid #f60035;
+  border-radius: 0;
+  border-right: 1px solid #f60035;
+  border-top: medium none !important;
+  display: none;
+  left: -32px;
+  position: absolute;
+  top: 43px;
+  z-index: 2147483647;
+}
+
+
+/*________________Rev slider wrapper css_____ */
+.rev_slider_wrapper .slide-content-box.middle-slide .button a {
+  border: 2px solid #ffffff;
+  color: #fefefe;
+  font-family: "Poppins",sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 48px 11px;
+  text-transform: uppercase;
+  transition: all 500ms ease !important;
+}
+
+
+/*________________Single blog post css_____ */
+.single-blog-post .img-holder .overlay-style-one .box .content a i {
+    background: #f60035 none repeat scroll 0 0;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+    opacity: 0;
+    -webkit-transform: translate3d(0px, 50px, 0px);
+    transform: translate3d(0px, 50px, 0px);
+    -webkit-transition: all 0.4s ease 0s !important;
+    transition: all 0.4s ease 0s !important;
+    display: inline-block;
+    width: 45px;
+    border-radius: 20px 20px 0px 0px;
+    border-bottom: none;
+}
+
+
+/*________________Brand area css_____ */
+.brand-area .brand .single-item img {
+    display: inline-block;
+    max-width: 100% !important;
+    opacity: 1;
+    padding: 0px 0;
+    position: relative;
+    -webkit-transition: all 300ms ease-in 0s;
+    transition: all 300ms ease-in 0s;
+    width: auto !important;
+}
+
+
+/*________________Cart area css_____ */
+.cart-area .cart-table tbody tr .qty .form-control {
+  background-color: #f7f7f7;
+  background-image: none;
+  border: 1px solid #f7f7f7;
+  border-radius: 0 !important;
+  box-shadow: none;
+  color: #222222;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  height: 45px;
+  padding: 6px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/*____________single shop content css_____ */
+
+.single-shop-content .content-box .addto-cart-box .form-control {
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #eaeaea;
+  border-radius: 0 !important;
+  box-shadow: none;
+  color: #272727;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  height: 50px;
+  padding: 6px 0 8px;
+  text-align: center;
+}
+
+

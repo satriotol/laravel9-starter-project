@@ -1,0 +1,1377 @@
+
+/* Large Layout: 1200px. */
+@media only screen and (min-width: 1200px){
+.container {padding: 0;}
+.container-fluid{padding: 0;}    
+ 
+    
+}
+
+
+/* Medium screen  */ 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+/*** 
+=============================================
+    Top bar Area style
+=============================================
+***/ 
+.top-bar-area .top-right {
+    margin-left: -20px;
+}
+   
+/*** 
+=============================================
+    Header Area style
+=============================================
+***/     
+.top-social-links li {
+    display: inline-block;
+    margin: 0 0 0 10px;
+}
+
+/*** 
+=============================================
+    Mainmenu Area style
+=============================================
+***/      
+.outer-search-box {
+    margin-right: 50px;
+} 
+.main-menu .navigation > li:hover > ul {
+  left: 15px;
+}    
+.main-menu .navigation > li.dropdown > a {
+    padding-right: 5px;
+}
+.main-menu .navigation li a {
+    padding: 19px 15px 18px;
+}
+.search-box {
+    right: 65px;
+}    
+
+/*** 
+=============================================
+    Latest Blog Area style
+=============================================
+***/       
+.single-blog-post .text-holder .blog-title {
+    font-size: 18px;
+    margin: 0 0 15px;
+}    
+    
+/*** 
+=============================================
+    Footer top Area style
+=============================================
+***/      
+.footer-top-area .footer-top-content .title h3 {
+    font-size: 18px;
+}    
+  
+/*** 
+=============================================
+    Company History Area style
+=============================================
+***/       
+.company-history .single-history .img-holder.mar-r-plus35 {
+  margin-right: 0;
+}    
+.company-history .single-history .text-holder.mar-l-minus35 {
+  margin-left: 0;
+}    
+.company-history .single-history .inner-box.mar-r-minus35 {
+  margin-right: 0;
+}    
+.company-history .single-history .img-holder.mar-l-plus35 {
+  margin-left: 0;
+}    
+    
+/*** 
+=============================================
+    Main Shop Area style
+=============================================
+***/ 
+.single-product-item .img-holder .overlay-style-one .box .content a {
+    width: 140px;
+    height: 42px;
+    line-height: 40px;
+}        
+.single-product-item .title-holder .top .product-title {
+  float: none !important;
+}    
+.single-product-item .title-holder .top .review-box {
+  float: none !important;
+  display: block;
+}        
+    
+    
+/*** 
+=============================================
+    Single Shop Area style
+=============================================
+***/     
+.single-shop-content .img-holder {
+  margin-right: 20px;
+}    
+.single-shop-content .content-box {
+  margin-left: -20px;
+}    
+ 
+/*** 
+=============================================
+    Login Register Area style
+=============================================
+***/     
+.login-register-area .form a.forgot-password {
+  margin: 70px 0 0;
+}    
+.login-register-area .form.register {
+    overflow: hidden;
+    margin-top: 50px;
+}    
+.login-register-area .form h6 {
+  margin: 28px 0 0;
+} 
+       
+/*** 
+=============================================
+    Single Service Area style
+=============================================
+***/      
+#single-service-area .top-content .text-holder {
+    margin-right: 0;
+}    
+#single-service-area .top-content .img-holder {
+    margin-left: 0;
+    margin-top: 35px;
+}    
+    
+#single-service-area .middle-content .single-item {
+    margin-bottom: 30px;
+    overflow: hidden;
+    min-height: 80px;
+}    
+#single-service-area .middle-content .single-item .text-holder {
+    padding-top: 12px;
+}    
+    
+#single-service-area .profit-improvement-content .text-holder {
+    overflow: hidden;
+    margin-bottom: 50px;
+}    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+}    
+    
+
+
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+/*** 
+=============================================
+    Top bar Area style
+=============================================
+***/
+.top-bar-area .top-info ul {
+    text-align: center;
+}
+.top-bar-area .top-info ul li {
+    float: none;
+    text-align: center;
+}
+.top-bar-area .top-right {
+    float: left;
+}    
+  
+/*** 
+=============================================
+    Header Area style
+=============================================
+***/  
+.header-area .logo {
+    text-align: center;
+    margin: 0 0 20px;
+}
+.header-contact-info {
+    overflow: hidden;
+    width: 450px;
+    margin: 0 auto;
+}   
+.top-social-links {
+    float: none;
+    margin: 20px 0 0;
+    text-align: center;
+}
+   
+/*** 
+=============================================
+    Mainmenu Area style
+=============================================
+***/     
+.main-menu .navigation > li.dropdown > a {
+    padding-right: 4px;
+}
+.main-menu .navigation li a {
+    padding: 19px 14px 18px;
+}  
+.outer-search-box {
+    float: right;
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 0;
+}
+.outer-search-box .seach-toggle {
+    margin: 5px 0 0;
+}    
+.search-box {
+    background: #f60035;
+    border-top: 2px solid #e60032;
+    opacity: 0;
+    padding: 20px;
+    position: absolute;
+    right: 15px;
+    top: 145%;
+    transition: all 500ms ease 0s;
+    visibility: hidden;
+    z-index: 999999999;
+}
+.free-consulation-button {
+    height: 45px;
+    float: left !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.free-consulation-button:before {
+    background: none;
+}
+.free-consulation-button a {
+    height: 45px;
+    padding: 11px 0;
+}    
+.main-menu .navigation > li:hover > ul {
+  left: 15px;
+}       
+    
+/*** 
+=============================================
+    Team Area style
+=============================================
+***/
+.team-area .single-team {
+    width: 100%;
+}    
+.team-area .single-team .img-holder img {
+    width: 100%;
+} 
+ 
+/*** 
+=============================================
+    Video Gallery Area style
+=============================================
+***/    
+.video-gallery-area .video-holder {
+    margin-top: 50px;
+}   
+
+/*** 
+=============================================
+    Brand Area style
+=============================================
+***/       
+.brand-area .brand .single-item {
+    height: 125px;
+}    
+   
+/*** 
+=============================================
+    Footer top Area style
+=============================================
+***/  
+.footer-top-area .footer-top-content .title {
+    float: none !important;
+    text-align: center;
+}    
+.footer-top-area .footer-top-content .button {
+    float: none !important;
+    width: 280px;
+    margin: 0 auto;
+}    
+    
+/*** 
+=============================================
+    Footer Area style
+=============================================
+***/      
+.single-footer-widget.pd-left {
+  padding-left: 100px;
+}  
+.single-footer-widget.pd-bottom{
+    padding-bottom: 50px;        
+}     
+ 
+/*** 
+=============================================
+    Footer Bottom style
+=============================================
+***/     
+.footer-bottom .copyright-text {
+    float: none !important;
+    text-align: center;
+    margin: 0;
+} 
+.footer-bottom .copyright-text p{
+    margin-bottom: 5px;        
+}    
+.footer-bottom .footer-menu {
+    float: none !important;
+    text-align: center;
+} 
+.footer-bottom .footer-menu ul li {
+    float: none;
+    margin: 0 15px;
+}    
+
+/*** 
+=============================================
+   Client Feedback Area & Left sidebar style
+=============================================
+***/
+.client-feedback-area {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}      
+.left-sidebar {
+    padding-top: 60px;
+}    
+    
+/*** 
+=============================================
+    Company History Area style
+=============================================
+***/       
+.company-history .single-history .img-holder.mar-r-plus35 {
+  margin-right: 0;
+}    
+.company-history .single-history .text-holder.mar-l-minus35 {
+  margin-left: 0;
+}    
+.company-history .single-history .inner-box.mar-r-minus35 {
+  margin-right: 0;
+}    
+.company-history .single-history .img-holder.mar-l-plus35 {
+  margin-left: 0;
+} 
+.company-history .single-history .img-holder{
+    margin-bottom: 30px;        
+}    
+.company-history .single-history .img-holder img {
+  width: 100%;
+}    
+    
+/*** 
+=============================================
+    Company Overview Area style
+=============================================
+***/      
+.company-overview-area .progress-br {
+    margin-top: 40px;
+}
+.company-overview-area .mission-content {
+    margin-right: 0;
+}    
+.company-overview-area .mission-video-gallery {
+    margin-left: 0;
+    margin-top: 60px;
+}    
+    
+/*** 
+=============================================
+    Partner Area style
+=============================================
+***/       
+.partner-area {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}    
+    
+/*** 
+=============================================
+    Team Page Area  style
+=============================================
+***/        
+.team-page-area .single-team-member .text-holder p {
+    font-size: 14px;
+}    
+    
+/*** 
+=============================================
+    Blog Area style
+=============================================
+***/      
+.sidebar-wrapper {
+  margin-top: 70px;
+} 
+    
+/*** 
+=============================================
+    Get Touch Area style
+=============================================
+***/        
+.get-touch-area{
+    padding-bottom: 50px;  
+}    
+.get-touch-area .single-item {
+    margin-bottom: 30px;
+} 
+    
+/*** 
+=============================================
+    Contact Form Area style
+=============================================
+***/     
+.contact-form-area .form-right-box {
+    margin-top: 50px;
+}    
+    
+/*** 
+=============================================
+    Main Shop Area style
+=============================================
+***/ 
+.single-product-item .img-holder .overlay-style-one .box .content a {
+    width: 140px;
+    height: 42px;
+    line-height: 40px;
+}       
+.single-product-item .title-holder .top .product-title {
+  float: none !important;
+}    
+.single-product-item .title-holder .top .review-box {
+  float: none !important;
+  display: block;
+}        
+    
+/*** 
+=============================================
+    Single Shop Area style
+=============================================
+***/     
+.single-shop-content .img-holder {
+  margin-right: 0px;
+}    
+.single-shop-content .content-box {
+  margin-left: 0;
+  margin-top: 35px;
+}   
+.related-product .single-product-item {
+  margin-bottom: 40px;
+}    
+  
+/*** 
+=============================================
+    Cart Area style
+=============================================
+***/      
+.cart-area .cart-bottom .calculate-shipping {
+  padding-bottom: 60px;
+} 
+
+/*** 
+=============================================
+    Checkout Area style
+=============================================
+***/    
+.checkout-area .form.shipping-info {
+  padding-top: 60px;
+}    
+.checkout-area .cart-total {
+  padding-top: 60px;
+}
+    
+/*** 
+=============================================
+    Login Register Area style
+=============================================
+***/     
+.login-register-area .form a.forgot-password {
+  margin: 70px 0 0;
+} 
+.login-register-area .register {
+  padding-top: 50px;
+}    
+.login-register-area .form h6 {
+  color: #797979;
+  float: left;
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-top: 27px;
+}
+
+/*** 
+=============================================
+    Single Service Area style
+=============================================
+***/      
+#single-service-area .top-content .text-holder {
+    margin-right: 0;
+}    
+#single-service-area .top-content .img-holder {
+    margin-left: 0;
+    margin-top: 35px;
+}    
+    
+#single-service-area .middle-content .single-item {
+    margin-bottom: 30px;
+    overflow: hidden;
+    min-height: 80px;
+}    
+#single-service-area .middle-content .single-item .text-holder {
+    padding-top: 12px;
+}    
+    
+#single-service-area .profit-improvement-content .text-holder {
+    overflow: hidden;
+    margin-bottom: 50px;
+}    
+
+    
+/*** 
+=============================================
+    Project Area style
+=============================================
+***/
+.project-filter {
+    margin-bottom: 40px;
+}    
+.project-filter li {
+    display: inline-block;
+    margin: 0 5.5px 10px;
+}
+.single-project-item.span-3 {
+    float: left;
+    width: 50%;
+}
+    
+ /*** 
+=============================================
+    Project Grid with text  style
+=============================================
+***/
+#project-area.grid-with-text .project-filter {
+    padding-bottom: 0;
+    margin-bottom: 40px;
+}
+#project-area.grid-with-text .project-filter li {
+    margin-bottom: 10px;
+}
+
+ /*** 
+=============================================
+    Project Single area  style
+=============================================
+***/    
+.project-single-area .legal-work-content {
+    overflow: hidden;
+    margin-top: 50px;
+}    
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) {
+    
+/*** 
+=============================================
+    Top bar Area style
+=============================================
+***/  
+.top-bar-area .top-info ul {
+    text-align: center;
+}
+.top-bar-area .top-info ul li {
+    float: none;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 4px;
+}
+.top-bar-area .top-right {
+    float: left;
+} 
+  
+    
+  
+/*** 
+=============================================
+    Header Area style
+=============================================
+***/ 
+.header-area {
+    padding: 30px 0 10px;
+}    
+.header-area .logo {
+    text-align: center;
+    margin: 0 0 20px;
+}
+.header-contact-info {
+    overflow: hidden;
+    width: 280px;
+    margin: 0 auto;
+}  
+.header-contact-info ul li {
+    border-right: none;
+    float: left;
+    margin-right: 0;
+    padding-right: 0;
+    padding-top: 15px;
+}      
+.top-social-links {
+    float: none;
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+       
+/*** 
+=============================================
+    Main mneu Area style
+=============================================
+***/ 
+.mainmenu-area {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    z-index: 999999;
+} 
+.mainmenu-area.stricky-fixed{
+    position: static;
+    background: none;
+}        
+.mainmenu-area .mainmenu-bg {
+    background: transparent;
+}
+    
+    
+    
+.free-consulation-button {
+    height: 40px;
+    float: left !important;
+    margin-top: -40px;
+    z-index: 9999999999;
+}
+.free-consulation-button:before {
+    background: none;
+    width: 205px;
+}    
+.free-consulation-button a {
+    height: 40px;
+    padding: 8px 0;
+} 
+     
+.outer-search-box {
+    float: right;
+    height: 40px;
+    width: 45px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0;
+    background: #fff;
+    border: 2px solid #f60035;
+} 
+.outer-search-box .seach-toggle {
+    margin: 0;
+    color: #f60035;
+    font-size: 14px;
+    padding: 8px 0;
+    line-height: 24px;
+}
+.search-box {
+    background: #f60035;
+    border-top: 2px solid #e60032;
+    opacity: 0;
+    padding: 20px;
+    position: absolute;
+    right: 15px;
+    top: 145%;
+    transition: all 500ms ease 0s;
+    visibility: hidden;
+    z-index: 999999999;
+}     
+.outer-search-box .seach-toggle:hover,
+.outer-search-box .seach-toggle.active{
+  background: transparent;	
+} 
+   
+.main-menu {
+  display: inline-block;
+  float: right !important;
+  padding-bottom: 0;
+  padding-top: 0;
+  z-index: 5;
+  width: 100%;
+}
+.main-menu .navigation li {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}   
+.main-menu .collapse {
+  border: 1px solid #fff !important;
+  border-radius: 0px !important;
+  float: none;
+  margin: 0;
+  max-height: 300px;
+  overflow: auto;
+  padding: 0;
+  width: 100%;
+}    
+.main-menu .collapse.in, 
+.main-menu .collapsing {
+  border: 1px solid #fff;
+  border-radius: 0px;
+  margin: 0 0 20px;
+  padding: 0;
+  border-top: none;
+}    
+.main-menu .navbar-header{
+  position:relative;
+  float:none;
+  display:block;
+  text-align:right;
+  width:100%;
+  padding:15px 0px;
+  right:0px;
+  z-index:12;
+}        
+.main-menu .navbar-header .navbar-toggle {
+    border: 2px solid #f60035;
+    display: inline-block;
+    float: none;
+    margin: 0;
+    z-index: 7;
+    width: 45px;
+    height: 40px;
+    border-radius: 0;
+}  
+.main-menu .navbar-header .navbar-toggle .icon-bar {
+  background: #f60035 none repeat scroll 0 0;
+  font-weight: 700;
+}  
+.main-menu .navbar-collapse > .navigation {
+  background: #1f51b4 none repeat scroll 0 0;
+  float: none !important;
+  margin: 0 !important;
+  width: 100% !important;
+  border-bottom: 1px solid #f20e3f;
+}      
+.main-menu .navbar-collapse > .navigation > li{
+  margin:0px !important;
+  float:none !important;
+  width:100%;
+  padding: 0;
+}  
+.main-menu .navigation li.dropdown > a:after{
+  display:none !important;
+} 
+.main-menu .navbar-collapse > .navigation > li > a{
+  padding:10px 10px !important;
+}    
+    
+  
+.main-menu .navbar-collapse > .navigation > li > ul,
+.main-menu .navbar-collapse > .navigation > li > ul > li > ul{
+  position:relative;
+  border:none;
+  float:none;
+  visibility:visible;
+  opacity:1;
+  display:none;
+  margin:0px;
+  left:auto !important;
+  right:auto !important;
+  top:auto !important;
+  width:100%;
+  background: none;
+  border-radius:0px;
+  -webkit-border-radius:0px;
+  -ms-border-radius:0px;
+  -o-border-radius:0px;
+  -moz-border-radius:0px;
+  transition:none !important;
+  -webkit-transition:none !important;
+  -ms-transition:none !important;
+  -o-transition:none !important;
+  -moz-transition:none !important;
+}    
+.main-menu .navbar-collapse > .navigation > li > ul,
+.main-menu .navbar-collapse > .navigation > li > ul > li > ul{
+  border-top: 0px solid rgba(255,255,255,1) !important;	
+}
+    
+.main-menu .navbar-collapse > .navigation > li,
+.main-menu .navbar-collapse > .navigation > li > ul > li,
+.main-menu .navbar-collapse > .navigation > li > ul > li > ul > li{
+  border-top: 1px solid #f20e3f !important;
+  opacity:1 !important;
+  top:0px !important;
+  left:0px !important;
+  visibility:visible !important;
+}
+.main-menu .navbar-collapse > .navigation > li > a,
+.main-menu .navbar-collapse > .navigation > li > ul > li > ul > li > a{
+  padding:10px 10px !important;
+  line-height:22px;
+  color:#ffffff;
+  background:#f60035;
+  text-align:left;
+} 
+.main-menu .navbar-collapse > .navigation > li > ul > li > a{
+  padding:10px 20px !important;
+  line-height:22px;
+  color:#ffffff;
+  background:#fb1445;
+  text-align:left;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}     
+ /**   
+.main-menu .navbar-collapse > .navigation > li > a:hover,
+.main-menu .navbar-collapse > .navigation > li > a:active,
+.main-menu .navbar-collapse > .navigation > li > a:focus{
+  background:#2b2c36;
+} 
+**/
+.main-menu .navbar-collapse > .navigation > li:hover > a,
+.main-menu .navbar-collapse > .navigation > li > ul > li:hover > a,
+.main-menu .navbar-collapse > .navigation > li > ul > li > ul > li:hover > a,
+.main-menu .navbar-collapse > .navigation > li.current > a{
+  background:#2b2c36;
+  color:#ffffff !important;
+}        
+.main-menu .navbar-collapse > .navigation li.dropdown .dropdown-btn{
+  display:block;
+}
+    
+/*** 
+=============================================
+    Call To Action Area style
+=============================================
+***/      
+.call-to-action-area .title {
+    padding: 0 20px 40px;
+} 
+
+/*** 
+=============================================
+    Latest project Area style
+=============================================
+***/     
+.latest-project-area .more-project {
+    float: left !important;
+    margin: 0 0 10px;
+}  
+/*** 
+=============================================
+    Team Area style
+=============================================
+***/
+.team-area .single-team {
+    width: 100%;
+}
+.team-area .single-team .title-holder h3 {
+    font-size: 15px;
+}    
+.team-area .single-team .img-holder img {
+    width: 100%;
+}    
+       
+/*** 
+=============================================
+    Video Gallery Area style
+=============================================
+***/    
+.video-gallery-area .video-holder {
+    margin-top: 50px;
+}   
+
+/*** 
+=============================================
+    Brand Area style
+=============================================
+***/       
+.brand-area .brand .single-item {
+    height: 125px;
+}    
+    
+/*** 
+=============================================
+    Footer top Area style
+=============================================
+***/  
+.footer-top-area .footer-top-content .title {
+    float: none !important;
+    text-align: center;
+}    
+.footer-top-area .footer-top-content .button {
+    float: none !important;
+    width: 280px;
+    margin: 0 auto;
+}    
+    
+/*** 
+=============================================
+    Footer Area style
+=============================================
+***/      
+.single-footer-widget.wedo{
+    padding-left: 0px;
+} 
+.single-footer-widget.pd-bottom{
+    padding-bottom: 50px;        
+}    
+.single-footer-widget.pd-top{
+    padding-top: 50px;        
+}    
+    
+    
+/*** 
+=============================================
+    Footer Bottom style
+=============================================
+***/     
+.footer-bottom .copyright-text {
+    float: none !important;
+    text-align: center;
+    margin: 0;
+} 
+.footer-bottom .copyright-text p{
+    margin-bottom: 8px;        
+}    
+.footer-bottom .footer-menu {
+    float: none !important;
+    text-align: center;
+} 
+.footer-bottom .footer-menu ul li {
+    float: none;
+    margin: 0 15px;
+}    
+    
+/*** 
+=============================================
+    Breadcrumb Area style
+=============================================
+***/     
+.breadcrumb-area {
+  height: auto;
+  padding-bottom: 100px;
+  padding-top: 100px;
+} 
+.breadcrumb-botton-area {
+    padding: 18px 0 14px;
+}    
+.breadcrumb-botton-area .left {
+  float: none !important;
+  text-align: center;
+}    
+.breadcrumb-botton-area .right {
+  float: none !important;
+  text-align: center;
+}    
+    
+/*** 
+=============================================
+   Client Feedback Area & Left sidebar style
+=============================================
+***/
+.client-feedback-area {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}    
+.left-sidebar {
+    padding-top: 60px;
+}    
+   
+/*** 
+=============================================
+    Company History Area style
+=============================================
+***/       
+.company-history .single-history .img-holder.mar-r-plus35 {
+  margin-right: 0;
+}    
+.company-history .single-history .text-holder.mar-l-minus35 {
+  margin-left: 0;
+}    
+.company-history .single-history .inner-box.mar-r-minus35 {
+  margin-right: 0;
+}    
+.company-history .single-history .img-holder.mar-l-plus35 {
+  margin-left: 0;
+} 
+.company-history .single-history .img-holder{
+    margin-bottom: 30px;        
+}    
+.company-history .single-history .img-holder img {
+  width: 100%;
+}    
+   
+/*** 
+=============================================
+    Company Overview Area style
+=============================================
+***/      
+.company-overview-area .progress-br {
+    margin-top: 40px;
+}
+.company-overview-area .mission-content {
+    margin-right: 0;
+}    
+.company-overview-area .mission-video-gallery {
+    margin-left: 0;
+    margin-top: 60px;
+}    
+
+/*** 
+=============================================
+    Faq Content Area style
+=============================================
+***/      
+.faq-content-area .accordion-box .accordion .accord-btn h4 {
+    font-size: 16px;
+    line-height: 26px;
+    padding-right: 20px;
+}  
+    
+/*** 
+=============================================
+    Partner Area style
+=============================================
+***/       
+.partner-area {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}    
+    
+/*** 
+=============================================
+    Blog Area style
+=============================================
+***/      
+.sidebar-wrapper {
+  margin-top: 70px;
+} 
+    
+/*** 
+=============================================
+    Blog single Area style
+=============================================
+***/    
+.blog-single-area .middle-content-box .img-holder, 
+.blog-single-area .middle-content-box .text-box {
+  display: block;
+}    
+.blog-single-area .middle-content-box .text-box {
+    padding-left: 0px;
+    padding-top: 50px;
+    position: relative;
+}
+.blog-single-area .middle-content-box .text-box:before {
+    top: 10px;
+    left: 0px;
+}    
+.blog-single-area .middle-content-box .img-holder {
+  width: auto;
+}    
+    
+/*** 
+=============================================
+    Get Touch Area style
+=============================================
+***/        
+.get-touch-area{
+    padding-bottom: 50px;  
+}  
+.get-touch-area .sec-title {
+    padding: 0 35px 40px;
+}    
+.get-touch-area .single-item {
+    margin-bottom: 30px;
+} 
+    
+/*** 
+=============================================
+    Contact Form Area style
+=============================================
+***/     
+.contact-form-area .form-right-box {
+    margin-top: 50px;
+}    
+    
+/*** 
+=============================================
+    Single Shop Area style
+=============================================
+***/     
+.single-shop-content .img-holder {
+  margin-right: 0px;
+}    
+.single-shop-content .content-box {
+  margin-left: 0;
+  margin-top: 35px;
+}   
+.related-product .single-product-item {
+  margin-bottom: 40px;
+}    
+    
+/*** 
+=============================================
+    Cart Area style
+=============================================
+***/
+.cart-middle .apply-coupon {
+  padding-left: 0;
+}       
+.cart-middle .apply-coupon input[type="text"] {
+  margin: 0 0 20px;
+  position: static;
+  width: 225px;
+}    
+.cart-area .cart-bottom .calculate-shipping {
+  padding-bottom: 60px;
+}    
+.cart-middle .update-cart {
+  float: left !important;
+  margin: 20px 0 0;
+}        
+    
+.cart-bottom .calculate-shipping input[type="text"] {
+    margin-bottom: 25px;
+}   
+    
+/*** 
+=============================================
+    Checkout Area style
+=============================================
+***/    
+.checkout-area .form.shipping-info {
+  padding-top: 60px;
+}    
+.checkout-area .cart-total {
+  padding-top: 60px;
+}
+    
+/*** 
+=============================================
+    Login Register Area style
+=============================================
+***/  
+.login-register-area .form a.forgot-password {
+  float: left;
+  margin: 35px 0 0;
+}  
+.login-register-area .form.register {
+  padding-top: 60px;
+}    
+.login-register-area .form .social-icon {
+  float: left;
+  margin-right: 0;
+  margin-top: 30px;
+}    
+.login-register-area .form .social-icon span {
+  left: 0;
+  position: relative;
+} 
+.login-register-area .form .social-icon .login-with {
+  position: static;
+}    
+.login-register-area .form h6 {
+  margin: 20px 0 0;
+}        
+    
+/*** 
+=============================================
+    Not Found Area  style
+=============================================
+***/       
+.not-found-content .search-form {
+  width: 300px;
+}    
+.not-found-content .search-form input[type="text"] {
+  width: 300px;
+}    
+    
+/*** 
+=============================================
+    Single Service Area style
+=============================================
+***/      
+#single-service-area .top-content .text-holder {
+    margin-right: 0;
+}    
+#single-service-area .top-content .img-holder {
+    margin-left: 0;
+    margin-top: 35px;
+}    
+    
+#single-service-area .middle-content .single-item {
+    margin-bottom: 30px;
+    overflow: hidden;
+    min-height: 80px;
+}    
+#single-service-area .middle-content .single-item .text-holder {
+    padding-top: 7px;
+}    
+    
+#single-service-area .profit-improvement-content .text-holder {
+    overflow: hidden;
+    margin-bottom: 50px;
+}    
+    
+/*** 
+=============================================
+    Project Area style
+=============================================
+***/
+.project-filter {
+    margin-bottom: 40px;
+}    
+.project-filter li {
+    display: inline-block;
+    margin: 0 5.5px 10px;
+}
+.single-project-item.span-3 {
+    float: left;
+    width: 100%;
+}
+        
+ /*** 
+=============================================
+    Project Grid with text  style
+=============================================
+***/
+#project-area.grid-with-text .project-filter {
+    padding-bottom: 0;
+    margin-bottom: 40px;
+}
+#project-area.grid-with-text .project-filter li {
+    margin-bottom: 10px;
+}
+    
+ /*** 
+=============================================
+    Project Single area  style
+=============================================
+***/    
+.project-single-area .legal-work-content {
+    overflow: hidden;
+    margin-top: 50px;
+}    
+    
+
+    
+ /*** 
+=============================================
+    Rev slider wrapper  style
+=============================================
+***/       
+.rev_slider_wrapper .tp-caption  {
+    display: none;
+} 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+    
+    
+}
+
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    
+ 
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+ 
+    
+    
+    
+ 
+}
