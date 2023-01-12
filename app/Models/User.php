@@ -106,8 +106,4 @@ class User extends Authenticatable
             return Role::all();
         }
     }
-    public function user_detail()
-    {
-        return $this->hasOne(UserDetail::class, 'user_id', 'id');
-    }
 }

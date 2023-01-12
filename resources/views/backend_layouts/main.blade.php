@@ -165,15 +165,6 @@
         const pond3 = FilePond.create(inputElementLogo);
         const pond4 = FilePond.create(inputElementImages);
         const pond5 = FilePond.create(inputElementIcon);
-        FilePond.setOptions({
-            server: {
-                process: '{{ route('upload.storeImage') }}',
-                revert: '{{ route('upload.revert') }}',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                }
-            },
-        });
     </script>
     @stack('custom-scripts')
 </body>

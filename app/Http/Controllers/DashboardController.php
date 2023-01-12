@@ -19,13 +19,7 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        $genders = UserDetail::GENDERS;
-        $totalPermohonanInformasi = PermohonanInformasi::getTotal();
-        $totalAsistensi = Asistensi::getTotal();
-        $totalKonsultasi = Konsultasi::getTotal();
-        $totalWbsReport = WbsReport::getTotal();
-        $totalUpgReport = UpgReport::getTotal();
-        return view('backend.dashboard', compact('genders', 'totalUpgReport', 'totalPermohonanInformasi', 'totalWbsReport', 'totalAsistensi', 'totalKonsultasi'));
+        return view('backend.dashboard');
     }
     public function storeUserDetail(Request $request)
     {
