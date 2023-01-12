@@ -33,12 +33,12 @@
                         <h3>User Management</h3>
                     </li>
                 @endcan
-                @can('user-index')
+                {{-- @can('user-index') --}}
                     <li>
                         <a class="side-menu__item {{ active_class(['user.*']) }}" href="{{ route('user.index') }}"><i
                                 class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">User</span></a>
                     </li>
-                @endcan
+                {{-- @endcan --}}
                 @can('role-index')
                     <li>
                         <a class="side-menu__item {{ active_class(['role.*']) }}" href="{{ route('role.index') }}"><i
