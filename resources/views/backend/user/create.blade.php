@@ -44,6 +44,8 @@
                             <input type="password" class="form-control" value="""
                                 @empty($user) required @endempty name="password_confirmation">
                         </div>
+                        <input type="file" name="image" id="">
+
                         <div class="form-group">
                             <label for="roles">Role</label>
                             <select name="roles" class="form-control" id="" required>

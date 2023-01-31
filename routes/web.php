@@ -64,14 +64,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']);
-
+Route::post('upload/store', [UploadController::class, 'store'])->name('upload.store');
+Route::delete('revert/image', [UploadController::class, 'revert'])->name('upload.revert');
 Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
-    // Route::get('/', function () {
-    //     return view('backend_layouts.main');
-    // })->name('dashboard');
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::resource('permission', PermissionController::class);
     Route::resource('role', RoleController::class);
