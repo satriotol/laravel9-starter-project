@@ -19,7 +19,7 @@
                     <form action="">
                         <div class="form-group">
                             <label for="">User</label>
-                            <select name="user_id" class="form-control select2" id="">
+                            <select name="user_id" class="form-control select2-show-search" id="">
                                 <option value="">Pilih User</option>
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}" @selected(@old('user_id'))>{{ $user->name }}
