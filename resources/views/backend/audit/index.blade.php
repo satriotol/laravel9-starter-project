@@ -16,6 +16,21 @@
                     <h3 class="card-title">Audit</h3>
                 </div>
                 <div class="card-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">User</label>
+                            <select name="user_id" class="form-control select2" id="">
+                                <option value="">Pilih User</option>
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}" @selected(@old('user_id'))>{{ $user->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-success">Cari</button>
+                        </div>
+                    </form>
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
