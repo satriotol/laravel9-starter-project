@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AsistensiController;
+use App\Http\Controllers\AuditController;
 use App\Http\Controllers\BeritaCategoryController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\BeritaSubcategoryController;
@@ -74,6 +75,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('permission', PermissionController::class);
     Route::resource('role', RoleController::class);
     Route::resource('user', UserController::class);
+    Route::resource('audit', AuditController::class);
     Route::get('user/resetPassword/{user}', [UserController::class, 'reset_password'])->name('user.resetPassword');
 });
 require __DIR__ . '/auth.php';

@@ -52,6 +52,12 @@
                                 class="side-menu__label">Permission</span></a>
                     </li>
                 @endcan
+                @can('audit-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['audit.*']) }}" href="{{ route('audit.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Audit</span></a>
+                    </li>
+                @endcan
             </ul>
             <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
                     width="24" height="24" viewBox="0 0 24 24">
