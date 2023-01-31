@@ -10,7 +10,6 @@ return [
         'quality' => 100,
         'math' => false,
         'expire' => 60,
-        'encrypt' => false,
     ],
     'math' => [
         'length' => 3,

@@ -59,46 +59,50 @@
                         <div class="panel panel-primary">
                             <div class="panel-body tabs-menu-body p-0 pt-5">
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="tab5">
-                                        <div class="wrap-input100 validate-input input-group"
-                                            data-bs-validate="Valid email is required: ex@abc.xyz">
-                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                                <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
-                                            </a>
-                                            <input class="input100 border-start-0 form-control ms-0" type="email"
-                                                v-model="form.email" name="email" required placeholder="Email">
-                                        </div>
-                                        <div class="wrap-input100 validate-input input-group" id="Password-toggle">
-                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                                <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
-                                            </a>
-                                            <input class="input100 border-start-0 form-control ms-0" type="password"
-                                                v-model="form.password" name="password" required placeholder="Password">
-                                        </div>
-                                        <div class="form-group mt-4 mb-4">
-                                            <div class="captcha">
-                                                <span v-html="captchaImage"></span>
-                                                <button type="button" class="btn btn-danger" class="reload"
-                                                    id="reload" @click="reloadCaptcha()">
-                                                    &#x21bb;
-                                                </button>
+                                    <form @submit.prevent="login">
+                                        <div class="tab-pane active" id="tab5">
+                                            <div class="wrap-input100 validate-input input-group"
+                                                data-bs-validate="Valid email is required: ex@abc.xyz">
+                                                <a href="javascript:void(0)"
+                                                    class="input-group-text bg-white text-muted">
+                                                    <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
+                                                </a>
+                                                <input class="input100 border-start-0 form-control ms-0" type="email"
+                                                    v-model="form.email" required placeholder="Email">
+                                            </div>
+                                            <div class="wrap-input100 validate-input input-group" id="Password-toggle">
+                                                <a href="javascript:void(0)"
+                                                    class="input-group-text bg-white text-muted">
+                                                    <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
+                                                </a>
+                                                <input class="input100 border-start-0 form-control ms-0" type="password"
+                                                    v-model="form.password" required placeholder="Password">
+                                            </div>
+                                            <div class="form-group mt-4 mb-4">
+                                                <div class="captcha">
+                                                    <span v-html="captchaImage"></span>
+                                                    <button type="button" class="btn btn-danger" class="reload"
+                                                        id="reload" @click="reloadCaptcha()">
+                                                        &#x21bb;
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-4">
+                                                <input id="captcha" type="text" class="form-control"
+                                                    placeholder="Enter Captcha" v-model="form.captcha">
+                                            </div>
+                                            <div class="container-login100-form-btn">
+                                                <button type="submit"
+                                                    class="login100-form-btn btn-primary">Masuk</button>
+                                            </div>
+                                            <div class="text-center pt-3">
+                                                <p class="text-dark mb-0">Tidak Punya Akun ?<a
+                                                        href="{{ route('register') }}"
+                                                        class="text-primary ms-1">Daftar</a>
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="form-group mb-4">
-                                            <input id="captcha" type="text" class="form-control"
-                                                placeholder="Enter Captcha" v-on:keyup.enter="login"
-                                                v-model="form.captcha" name="captcha">
-                                        </div>
-                                        <div class="container-login100-form-btn">
-                                            <button type="submit" class="login100-form-btn btn-primary"
-                                                @click="login">Masuk</button>
-                                        </div>
-                                        <div class="text-center pt-3">
-                                            <p class="text-dark mb-0">Tidak Punya Akun ?<a
-                                                    href="{{ route('register') }}" class="text-primary ms-1">Daftar</a>
-                                            </p>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +151,7 @@
                     form: {
                         email: '',
                         password: '',
-                        capcha: '',
+                        captcha: '',
                     },
                     captchaImage: '',
                 }
@@ -186,7 +190,9 @@
                                 icon: 'error',
                                 text: err.response.data.message,
                                 confirmButtonText: 'Ok',
-                            })
+                            });
+                            this.form.captcha = '';
+                            this.reloadCaptcha();
                         });
                 },
                 reloadCaptcha() {
