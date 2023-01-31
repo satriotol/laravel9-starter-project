@@ -50,7 +50,7 @@
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
                                         <button type="submit" class="dropdown-item">
-                                            <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
+                                            <i class="dropdown-icon fe fe-alert-circle"></i> Keluar
                                         </button>
                                     </form>
                                 </div>
