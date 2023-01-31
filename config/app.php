@@ -197,6 +197,7 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
     ],
 
     /*
