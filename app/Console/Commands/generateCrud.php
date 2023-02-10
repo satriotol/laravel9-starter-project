@@ -67,7 +67,9 @@ class generateCrud extends Command
             ],
             $this->getStub('viewIndex')
         );
-        mkdir(resource_path("/views/backend/{$name}"));
+        if (resource_path("/views/backend/" . strtolower($name)) == null) {
+            mkdir(resource_path("/views/backend/{$name}"));
+        }
         file_put_contents(resource_path("/views/backend/{$name}/index.blade.php"), $viewTemplate);
     }
     protected function storePermission($name)
@@ -98,7 +100,7 @@ class generateCrud extends Command
         $this->controller($name);
         $this->model($name);
         $this->viewIndex($name);
-        $this->storePermission($name);
+        // $this->storePermission($name);
         //create api route
         // File::append(
         //     base_path('routes/api.php'),
