@@ -67,7 +67,8 @@ class generateCrud extends Command
             ],
             $this->getStub('viewIndex')
         );
-        file_put_contents(app_path("/Http/Controllers/{$name}Controller.php"), $contviewTemplaterollerTemplate);
+        mkdir(resource_path("/views/backend/{$name}"));
+        file_put_contents(resource_path("/views/backend/{$name}/index.blade.php"), $viewTemplate);
     }
 
     /**
