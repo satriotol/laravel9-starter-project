@@ -67,8 +67,8 @@ class generateCrud extends Command
             ],
             $this->getStub('viewIndex')
         );
-        if (resource_path("/views/backend/" . strtolower($name)) == null) {
-            mkdir(resource_path("/views/backend/{$name}"));
+        if (!file_exists(resource_path("/views/backend/" . strtolower($name)))) {
+            mkdir(resource_path("/views/backend/" . strtolower($name)));
         }
         file_put_contents(resource_path("/views/backend/{$name}/index.blade.php"), $viewTemplate);
     }
