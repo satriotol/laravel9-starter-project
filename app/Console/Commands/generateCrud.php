@@ -71,5 +71,6 @@ class generateCrud extends Command
         //    Route::post('" . Str::plural(strtolower($name)) . "/update/{id}', '{$name}Controller@update');
         //    Route::delete('" . Str::plural(strtolower($name)) . "/delete/{id}', '{$name}Controller@delete');"
         // );
+        return 'Sukses';
     }
 }
