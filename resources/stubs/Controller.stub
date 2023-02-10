@@ -18,11 +18,11 @@ class {{modelName}}Controller extends Controller
     public function index()
     {
         ${{modelNamePlural}} = {{modelName}}::paginate();
-        return view('',compact('{{modelNamePlural}}'));
+        return view('backend.{{modelNameSingular}}.index',compact('{{modelNamePlural}}'));
     }
     public function create()
     {
-        return view('');
+        return view('backend.{{modelNameSingular}}.create');
     }
     public function store(Request $request)
     {
@@ -31,11 +31,11 @@ class {{modelName}}Controller extends Controller
         ]);
         {{modelName}}::create($data);
         session()->flash('success');
-        return redirect(route(''));
+        return redirect(route('{{modelNameSingular}}.index'));
     }
     public function edit({{modelName}} ${{modelNameSingular}})
     {
-        return view('', compact('{{modelNameSingular}}'));
+        return view('backend.{{modelNameSingular}}.create', compact('{{modelNameSingular}}'));
     }
     public function update(Request $request, {{modelName}} ${{modelNameSingular}})
     {
@@ -43,7 +43,7 @@ class {{modelName}}Controller extends Controller
         ]);
         ${{modelNameSingular}}->update($data);
         session()->flash('success');
-        return redirect(route(''));
+        return redirect(route('{{modelNameSingular}}.index'));
     }
     public function destroy({{modelName}} ${{modelNameSingular}})
     {
