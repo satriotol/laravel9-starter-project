@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\{{modelName}};
+
+class {{modelName}}Controller extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('permission:{{modelNameSingular}}-index|{{modelNameSingular}}-create|{{modelNameSingular}}-edit|{{modelNameSingular}}-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:{{modelNameSingular}}-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:{{modelNameSingular}}-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:{{modelNameSingular}}-delete', ['only' => ['destroy']]);
+    }
+    public function index()
+    {
+        ${{modelNamePlural}} = {{modelName}}::paginate();
+        return view('',compact('{{modelNamePlural}}'));
+    }
+}
