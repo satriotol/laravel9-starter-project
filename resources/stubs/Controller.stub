@@ -20,4 +20,35 @@ class {{modelName}}Controller extends Controller
         ${{modelNamePlural}} = {{modelName}}::paginate();
         return view('',compact('{{modelNamePlural}}'));
     }
+    public function create()
+    {
+        return view('');
+    }
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+
+        ]);
+        {{modelName}}::create($data);
+        session()->flash('success');
+        return redirect(route(''));
+    }
+    public function edit({{modelName}} ${{modelNameSingular}})
+    {
+        return view('', compact('{{modelNameSingular}}'));
+    }
+    public function update(Request $request, {{modelName}} ${{modelNameSingular}})
+    {
+        $data = $request->validate([
+        ]);
+        ${{modelNameSingular}}->update($data);
+        session()->flash('success');
+        return redirect(route(''));
+    }
+    public function destroy({{modelName}} ${{modelNameSingular}})
+    {
+        ${{modelNameSingular}}->delete();
+        session()->flash('success');
+        return back();
+    }
 }
