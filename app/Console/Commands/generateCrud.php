@@ -93,18 +93,6 @@ class generateCrud extends Command
         }
         file_put_contents(resource_path("/views/backend/{$name}/create.blade.php"), $createTemplate);
     }
-    protected function createMigration($name)
-    {
-        if (Schema::hasTable(strtolower(Str::plural($name)))) {
-            $this->info('Users table already exists');
-            return;
-        }
-        Schema::create(strtolower(Str::plural($name)), function ($table) {
-            $table->id();
-            $table->softDeletes();
-            $table->timestamps();
-        });
-    }
     protected function storePermission($name)
     {
         $data = [
@@ -134,8 +122,7 @@ class generateCrud extends Command
         $this->model($name);
         $this->viewIndex($name);
         $this->viewCreate($name);
-        // $this->storePermission($name);
-        $this->createMigration($name);
+        $this->storePermission($name);
         //create api route
         // File::append(
         //     base_path('routes/api.php'),
