@@ -73,7 +73,7 @@ class generateCrud extends Command
     protected function storePermission($name)
     {
         $data = [
-            '-index', '-create', 'edit', '-delete'
+            '-index', '-create', '-edit', '-delete'
         ];
         foreach ($data as $d) {
             Permission::updateOrCreate(
