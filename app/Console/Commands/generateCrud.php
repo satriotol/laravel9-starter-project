@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-
+use Spatie\Permission\Models\Permission;
 
 class generateCrud extends Command
 {
@@ -70,6 +70,22 @@ class generateCrud extends Command
         mkdir(resource_path("/views/backend/{$name}"));
         file_put_contents(resource_path("/views/backend/{$name}/index.blade.php"), $viewTemplate);
     }
+    protected function storePermission($name)
+    {
+        $data = [
+            '-index', '-create', 'edit', '-delete'
+        ];
+        foreach ($data as $d) {
+            Permission::updateOrCreate(
+                [
+                    'name' => strtolower($name) . $d,
+                ],
+                [
+                    'guard_name' => 'web'
+                ]
+            );
+        }
+    }
 
     /**
      * Execute the console command.
@@ -82,6 +98,7 @@ class generateCrud extends Command
         $this->controller($name);
         $this->model($name);
         $this->viewIndex($name);
+        $this->storePermission($name);
         //create api route
         // File::append(
         //     base_path('routes/api.php'),
