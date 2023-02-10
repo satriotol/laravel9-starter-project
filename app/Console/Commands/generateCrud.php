@@ -54,7 +54,7 @@ class generateCrud extends Command
     }
     protected function viewIndex($name)
     {
-        $viewTemplate = str_replace(
+        $indexTemplate = str_replace(
             [
                 '{{modelName}}',
                 '{{modelNamePlural}}',
@@ -70,7 +70,27 @@ class generateCrud extends Command
         if (!file_exists(resource_path("/views/backend/" . strtolower($name)))) {
             mkdir(resource_path("/views/backend/" . strtolower($name)));
         }
-        file_put_contents(resource_path("/views/backend/{$name}/index.blade.php"), $viewTemplate);
+        file_put_contents(resource_path("/views/backend/{$name}/index.blade.php"), $indexTemplate);
+    }
+    protected function viewCreate($name)
+    {
+        $createTemplate = str_replace(
+            [
+                '{{modelName}}',
+                '{{modelNamePlural}}',
+                '{{modelNameSingular}}'
+            ],
+            [
+                $name,
+                strtolower(Str::plural($name)),
+                strtolower($name)
+            ],
+            $this->getStub('viewCreate')
+        );
+        if (!file_exists(resource_path("/views/backend/" . strtolower($name)))) {
+            mkdir(resource_path("/views/backend/" . strtolower($name)));
+        }
+        file_put_contents(resource_path("/views/backend/{$name}/create.blade.php"), $createTemplate);
     }
     protected function storePermission($name)
     {
