@@ -52,6 +52,23 @@ class generateCrud extends Command
         );
         file_put_contents(app_path("/Models/{$name}.php"), $modelTemplate);
     }
+    protected function viewIndex($name)
+    {
+        $viewTemplate = str_replace(
+            [
+                '{{modelName}}',
+                '{{modelNamePlural}}',
+                '{{modelNameSingular}}'
+            ],
+            [
+                $name,
+                strtolower(Str::plural($name)),
+                strtolower($name)
+            ],
+            $this->getStub('viewIndex')
+        );
+        file_put_contents(app_path("/Http/Controllers/{$name}Controller.php"), $contviewTemplaterollerTemplate);
+    }
 
     /**
      * Execute the console command.
@@ -63,6 +80,7 @@ class generateCrud extends Command
         $name = $this->argument('name');
         $this->controller($name);
         $this->model($name);
+        $this->viewIndex($name);
         //create api route
         // File::append(
         //     base_path('routes/api.php'),
