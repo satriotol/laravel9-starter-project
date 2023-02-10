@@ -120,7 +120,8 @@ class generateCrud extends Command
         $this->controller($name);
         $this->model($name);
         $this->viewIndex($name);
-        // $this->storePermission($name);
+        $this->viewCreate($name);
+        $this->storePermission($name);
         //create api route
         // File::append(
         //     base_path('routes/api.php'),
