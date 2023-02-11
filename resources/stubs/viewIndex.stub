@@ -22,14 +22,14 @@
                     <div class="table-responsive">
                         <table class="table border table-bordered text-nowrap text-md-nowrap table-sm mb-0">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (${{modelNamePlural}} as ${{modelNameSingular}})
                                     <tr>
-                                        <td>
+                                        <td class="text-center">
                                             <form action="{{ route('{{modelNameSingular}}.destroy', ${{modelNameSingular}}->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')

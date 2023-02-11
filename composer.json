@@ -13,6 +13,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "laravelcollective/html": "^6.0",
         "mews/captcha": "^3.2",
         "owen-it/laravel-auditing": "^13.0",
         "spatie/laravel-permission": "^5.7"
