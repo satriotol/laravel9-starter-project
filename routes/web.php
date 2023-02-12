@@ -7,6 +7,7 @@ use App\Http\Controllers\CaptchaServiceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
+// URL_CRUD_GENERATOR
 use Illuminate\Support\Facades\Route;
 
 /*

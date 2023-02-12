@@ -114,7 +114,9 @@ class generateCrud extends Command
     {
         $routeFile = base_path('routes/web.php');
         $route = "\nRoute::resource('" . strtolower($name) . "', " . $name . "Controller::class);";
+        $urlRoute = "\nuse App\Http\Controllers\" . $name . Controller;";
         $after = '// CRUD_GENERATOR';
+        $after_url = '// URL_CRUD_GENERATOR';
         if ($after) {
             $contents = file_get_contents($routeFile);
             $line = strpos($contents, $after);
@@ -129,7 +131,20 @@ class generateCrud extends Command
         } else {
             File::append($routeFile, $route);
         }
-        File::append($routeFile, $route);
+        if ($after_url) {
+            $contents = file_get_contents($routeFile);
+            $line = strpos($contents, $after_url);
+
+            if ($line !== false) {
+                $line += strlen($after_url) + 1;
+                $contents = substr_replace($contents, $urlRoute, $line, 0);
+                File::put($routeFile, $contents);
+            } else {
+                File::append($routeFile, $urlRoute);
+            }
+        } else {
+            File::append($routeFile, $urlRoute);
+        }
     }
     /**
      * Execute the console command.
