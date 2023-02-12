@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
@@ -122,7 +123,8 @@ class generateCrud extends Command
         $this->model($name);
         $this->viewIndex($name);
         $this->viewCreate($name);
-        $this->storePermission($name);
+        // $this->storePermission($name);
+        Artisan::call('make:migration create_' . strtolower(Str::plural($name)) . '_table');
         //create api route
         // File::append(
         //     base_path('routes/api.php'),
