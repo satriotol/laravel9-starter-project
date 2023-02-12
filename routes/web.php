@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('role', RoleController::class);
     Route::resource('user', UserController::class);
     Route::resource('audit', AuditController::class);
+    // CRUD_GENERATOR
     Route::get('user/resetPassword/{user}', [UserController::class, 'reset_password'])->name('user.resetPassword');
 });
 require __DIR__ . '/auth.php';
