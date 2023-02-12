@@ -110,7 +110,12 @@ class generateCrud extends Command
             );
         }
     }
-
+    protected function addRoute($name)
+    {
+        $routeFile = base_path('routes/web.php');
+        $route = "\nRoute::resource('" . strtolower($name) . "', " . $name . "Controller::class);";
+        File::append($routeFile, $route);
+    }
     /**
      * Execute the console command.
      *
@@ -125,6 +130,9 @@ class generateCrud extends Command
         $this->viewCreate($name);
         // $this->storePermission($name);
         Artisan::call('make:migration create_' . strtolower(Str::plural($name)) . '_table');
+        $this->addRoute($name);
+
+        $this->info('Sukses Membuat CRUD.');
         //create api route
         // File::append(
         //     base_path('routes/api.php'),
