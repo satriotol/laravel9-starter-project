@@ -114,7 +114,7 @@ class generateCrud extends Command
     {
         $routeFile = base_path('routes/web.php');
         $route = "\nRoute::resource('" . strtolower($name) . "', " . $name . "Controller::class);";
-        $urlRoute = "\nuse App\Http\Controllers\" . $name . Controller;";
+        $urlRoute = "\nuse App\Http\Controllers\{$name}Controller;";
         $after = '// CRUD_GENERATOR';
         $after_url = '// URL_CRUD_GENERATOR';
         if ($after) {
