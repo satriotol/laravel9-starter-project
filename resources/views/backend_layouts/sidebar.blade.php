@@ -28,6 +28,17 @@
                         href="{{ route('dashboard') }}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span></a>
                 </li>
+                @canany(['crud-index'])
+                    <li class="sub-category">
+                        <h3>CRUD</h3>
+                    </li>
+                @endcan
+                @can('crud-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['crud.*']) }}" href="{{ route('crud.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">CRUD</span></a>
+                    </li>
+                @endcan
                 @canany(['user-index', 'role-index', 'permission-index'])
                     <li class="sub-category">
                         <h3>User Management</h3>

@@ -158,9 +158,9 @@ class generateCrud extends Command
         $this->model($name);
         $this->viewIndex($name);
         $this->viewCreate($name);
-        // $this->storePermission($name);
         Artisan::call('make:migration create_' . strtolower(Str::plural($name)) . '_table');
         $this->addRoute($name);
+        // $this->storePermission($name);
 
         $this->info('Sukses Membuat CRUD.');
         //create api route
