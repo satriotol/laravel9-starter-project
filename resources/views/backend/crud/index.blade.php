@@ -23,12 +23,18 @@
                         <table class="table border table-bordered text-nowrap text-md-nowrap table-sm mb-0">
                             <thead>
                                 <tr class="text-center">
+                                    <th>Model</th>
+                                    <th>Singular</th>
+                                    <th>Plural</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($cruds as $crud)
                                     <tr>
+                                        <td>{{ $crud->model }}</td>
+                                        <td>{{ $crud->singular }}</td>
+                                        <td>{{ $crud->plural }}</td>
                                         <td class="text-center">
                                             <form action="{{ route('crud.destroy', $crud->id) }}" method="post">
                                                 @csrf
@@ -38,8 +44,7 @@
                                                     Edit
                                                 </a>
                                                 <input type="submit" class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Are you sure?')" value="Delete"
-                                                    id="">
+                                                    onclick="return confirm('Are you sure?')" value="Delete" id="">
                                             </form>
                                         </td>
                                     </tr>
