@@ -18,7 +18,7 @@ class CrudController extends Controller
         $this->middleware('permission:crud-delete', ['only' => ['destroy']]);
     }
 
-    public function generateModel($data)
+    protected function generateModel($data)
     {
         $modelTemplate = str_replace(
             ['{{modelName}}', '{{modelNamePlural}}'],
@@ -27,7 +27,7 @@ class CrudController extends Controller
         );
         file_put_contents(app_path("/Models/{$data['model']}.php"), $modelTemplate);
     }
-    public function generateController($data)
+    protected function generateController($data)
     {
         $controllerTemplate = str_replace(
             [
@@ -44,7 +44,7 @@ class CrudController extends Controller
         );
         file_put_contents(app_path("/Http/Controllers/{$data['model']}Controller.php"), $controllerTemplate);
     }
-    public function viewIndex($data)
+    protected function viewIndex($data)
     {
         $indexTemplate = str_replace(
             [
@@ -64,7 +64,7 @@ class CrudController extends Controller
         }
         file_put_contents(resource_path("/views/backend/{$data['model']}/index.blade.php"), $indexTemplate);
     }
-    public function viewCreate($data)
+    protected function viewCreate($data)
     {
         $createTemplate = str_replace(
             [
