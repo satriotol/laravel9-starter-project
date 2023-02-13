@@ -13,5 +13,5 @@ class Crud extends Model implements Auditable
 
     protected $table = 'cruds';
 
-    protected $fillable = ['name', 'plural', 'singular'];
+    protected $fillable = ['model', 'plural', 'singular'];
 }
