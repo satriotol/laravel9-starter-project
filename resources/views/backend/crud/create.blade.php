@@ -48,6 +48,32 @@
                                 'class' => 'form-control',
                             ]) !!}
                         </div>
+                        <table class="table table-bordered" id="dynamicAddRemove">
+                            <tr>
+                                <th>Nama Tabel</th>
+                                <th>Tipe Data</th>
+                                <th>Nullable</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="tables[0][name]" required placeholder="Masukkan Nama Tabel"
+                                        class="form-control" />
+                                </td>
+                                <td>
+                                    <input type="text" name="tables[0][type]" required placeholder="Masukkan Type"
+                                        class="form-control" />
+                                </td>
+                                <td>
+                                    <select name="tables[0][is_null]" required class="form-control select2">
+                                        <option value="0">Tidak</option>
+                                        <option value="1">Ya</option>
+                                    </select>
+                                </td>
+                                <td><button type="button" name="add" id="dynamic-ar"
+                                        class="btn btn-outline-primary">Tambah</button></td>
+                            </tr>
+                        </table>
                         <div class="text-end">
                             <a class="btn btn-warning" href="{{ route('crud.index') }}">Kembali</a>
                             <button class="btn btn-primary" type="submit">Submit</button>
@@ -59,4 +85,24 @@
     </div>
 @endsection
 @push('custom-scripts')
+    <script type="text/javascript">
+        var i = 0;
+        $("#dynamic-ar").click(function() {
+            ++i;
+            $("#dynamicAddRemove").append(
+                `<tr>'+
+                '<td><input type="text" name="tables[` + i + `][name]" placeholder="Masukkan Nama Tabel" class="form-control" /></td>' +
+                '<td><input type="text" name="tables[` + i + `][type]" placeholder="Masukkan Type" class="form-control" /></td>' +
+                '<td><select name="tables[` + i + `][is_null]" required class="form-control select2">' +
+                    '<option value="0">Tidak</option>' +
+                    '<option value="1">Ya</option>' +
+                '</select></td>' +
+                '<td><button type="button" class="btn btn-outline-danger remove-input-field">Hapus</button></td>' +
+                '</tr>`
+            );
+        });
+        $(document).on('click', '.remove-input-field', function() {
+            $(this).parents('tr').remove();
+        });
+    </script>
 @endpush

@@ -151,7 +151,9 @@ class CrudController extends Controller
             'model' => 'required|unique:cruds,model',
             'plural' => 'required|unique:cruds,plural',
             'singular' => 'required|unique:cruds,singular',
+            'tables' => 'required',
         ]);
+        dd($data);
         Crud::create($data);
         $this->generateModel($data);
         $this->generateController($data);
