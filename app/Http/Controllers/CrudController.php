@@ -40,7 +40,7 @@ class CrudController extends Controller
     protected function viewIndex($data)
     {
         foreach ($data['tables'] as $d) {
-            $column = "<td>\${$data['singular']}->{$d['name']}</td>";
+            $column = "<td>{{\${$data['singular']}->{$d['name']}}}</td>";
             $rows[] = $column;
         }
         $rows = trim(implode("\n", $rows));
