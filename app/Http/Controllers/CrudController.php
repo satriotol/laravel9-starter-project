@@ -41,20 +41,25 @@ class CrudController extends Controller
     {
         foreach ($data['tables'] as $d) {
             $column = "<td>{{\${$data['singular']}->{$d['name']}}}</td>";
+            $thead = "<th>{$d['name']}</th>";
             $rows[] = $column;
+            $theadRows[] = $thead;
         }
+        $theadRows = trim(implode("\n", $theadRows));
         $rows = trim(implode("\n", $rows));
         $indexTemplate = str_replace(
             [
                 '{{modelName}}',
                 '{{modelNamePlural}}',
                 '{{modelNameSingular}}',
+                'TableHead',
                 'TableBody'
             ],
             [
                 $data['model'],
                 $data['plural'],
                 $data['singular'],
+                $theadRows,
                 $rows,
             ],
             file_get_contents(resource_path("stubs/viewIndex.stub"))
