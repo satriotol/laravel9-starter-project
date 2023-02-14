@@ -49,7 +49,7 @@ class CrudController extends Controller
                 '{{modelName}}',
                 '{{modelNamePlural}}',
                 '{{modelNameSingular}}',
-                'TableField'
+                'TableBody'
             ],
             [
                 $data['model'],
