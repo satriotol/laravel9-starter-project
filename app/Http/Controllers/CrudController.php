@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Crud;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\File;
 use Spatie\Permission\Models\Permission;
 
@@ -147,8 +148,19 @@ class CrudController extends Controller
             $rows[] = $column . ";\n";
         }
         $rows = trim(implode(str_repeat(' ', 12), $rows), "\n");
-
-        return $this;
+        $migrationTemplate = str_replace(
+            [
+                'DummyStructure',
+                'DummyTable',
+            ],
+            [
+                $rows,
+                $data['plural'],
+            ],
+            file_get_contents(resource_path("stubs/Migration.stub"))
+        );
+        $getDate = Date::now()->format('Y_m_d_His');
+        file_put_contents(database_path("/migrations/{$getDate}_create_{$data['plural']}_table.php"), $migrationTemplate);
     }
     public function index()
     {
