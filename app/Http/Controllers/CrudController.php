@@ -207,8 +207,8 @@ class CrudController extends Controller
             'singular' => 'required|unique:cruds,singular',
             'tables' => 'required',
         ]);
-        $this->viewIndex($data);
         Crud::create($data);
+        $this->viewIndex($data);
         $this->generateModel($data);
         $this->createMigration($data);
         $this->generateModel($data);
