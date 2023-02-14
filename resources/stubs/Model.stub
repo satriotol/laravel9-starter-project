@@ -12,4 +12,6 @@ class {{modelName}} extends Model implements Auditable
     use HasFactory, AuditableTrait;
 
     protected $table = '{{modelNamePlural}}';
+
+    protected $fillable = [DummyTable];
 }

@@ -19,15 +19,7 @@ class CrudController extends Controller
         $this->middleware('permission:crud-delete', ['only' => ['destroy']]);
     }
 
-    protected function generateModel($data)
-    {
-        $modelTemplate = str_replace(
-            ['{{modelName}}', '{{modelNamePlural}}'],
-            [$data['model'], $data['plural']],
-            file_get_contents(resource_path("stubs/Model.stub"))
-        );
-        file_put_contents(app_path("/Models/{$data['model']}.php"), $modelTemplate);
-    }
+
     protected function generateController($data)
     {
         $controllerTemplate = str_replace(
@@ -162,6 +154,25 @@ class CrudController extends Controller
         $getDate = Date::now()->format('Y_m_d_His');
         file_put_contents(database_path("/migrations/{$getDate}_create_{$data['plural']}_table.php"), $migrationTemplate);
     }
+    protected function generateModel($data)
+    {
+        foreach ($data['tables'] as $d) {
+            $column = $d['name'];
+            $array = explode(" ", $d['name']);
+            $array_quoted = array_map(function ($word) {
+                return '"' . $word . '"';
+            }, $array);
+            $string_with_quotes = implode(",", $array_quoted);
+            $rows[] = $string_with_quotes;
+        }
+        $rows = trim(implode(",", $rows));
+        $modelTemplate = str_replace(
+            ['{{modelName}}', '{{modelNamePlural}}', 'DummyTable'],
+            [$data['model'], $data['plural'], $rows],
+            file_get_contents(resource_path("stubs/Model.stub"))
+        );
+        file_put_contents(app_path("/Models/{$data['model']}.php"), $modelTemplate);
+    }
     public function index()
     {
         $cruds = Crud::paginate();
@@ -184,15 +195,15 @@ class CrudController extends Controller
             'singular' => 'required|unique:cruds,singular',
             'tables' => 'required',
         ]);
-        $this->createMigration($data);
-        dd($data);
+        $this->generateModel($data);
         Crud::create($data);
-        // $this->generateModel($data);
-        // $this->generateController($data);
-        // $this->viewIndex($data);
-        // $this->viewCreate($data);
+        $this->createMigration($data);
+        $this->generateModel($data);
+        $this->generateController($data);
+        $this->viewIndex($data);
+        $this->viewCreate($data);
+        $this->addRoute($data);
         // $this->storePermission($data);
-        // $this->addRoute($data);
         session()->flash('success');
         return redirect(route('crud.index'));
     }
