@@ -215,7 +215,7 @@ class CrudController extends Controller
         $this->viewIndex($data);
         $this->viewCreate($data);
         $this->addRoute($data);
-        // $this->storePermission($data);
+        $this->storePermission($data);
         session()->flash('success');
         return redirect(route('crud.index'));
     }
