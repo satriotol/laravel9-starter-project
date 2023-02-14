@@ -67,7 +67,7 @@ class CrudController extends Controller
         if (!file_exists(resource_path("/views/backend/" . $data['singular']))) {
             mkdir(resource_path("/views/backend/" . $data['singular']));
         }
-        file_put_contents(resource_path("/views/backend/{$data['model']}/index.blade.php"), $indexTemplate);
+        file_put_contents(resource_path("/views/backend/{$data['singular']}/index.blade.php"), $indexTemplate);
     }
     protected function viewCreate($data)
     {
@@ -208,9 +208,8 @@ class CrudController extends Controller
             'tables' => 'required',
         ]);
         Crud::create($data);
-        $this->viewIndex($data);
-        $this->generateModel($data);
         $this->createMigration($data);
+        $this->generateModel($data);
         $this->generateModel($data);
         $this->generateController($data);
         $this->viewIndex($data);
