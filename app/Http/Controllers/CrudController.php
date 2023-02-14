@@ -49,12 +49,13 @@ class CrudController extends Controller
                 '{{modelName}}',
                 '{{modelNamePlural}}',
                 '{{modelNameSingular}}',
-                'TableHead'
+                'TableField'
             ],
             [
                 $data['model'],
                 $data['plural'],
                 $data['singular'],
+                $rows,
             ],
             file_get_contents(resource_path("stubs/viewIndex.stub"))
         );
