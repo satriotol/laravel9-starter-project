@@ -40,15 +40,10 @@ class CrudController extends Controller
     protected function viewIndex($data)
     {
         foreach ($data['tables'] as $d) {
-            $column = $d['name'];
-            $array = explode(" ", $d['name']);
-            $array_quoted = array_map(function ($word) {
-                return '"' . $word . '"';
-            }, $array);
-            $string_with_quotes = implode(",", $array_quoted);
-            $rows[] = $string_with_quotes;
+            $column = "<td>\${$data['singular']}->{$d['name']}</td>";
+            $rows[] = $column;
         }
-        $rows = trim(implode(",", $rows));
+        $rows = trim(implode("\n", $rows));
         $indexTemplate = str_replace(
             [
                 '{{modelName}}',
