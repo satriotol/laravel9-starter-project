@@ -39,11 +39,22 @@ class CrudController extends Controller
     }
     protected function viewIndex($data)
     {
+        foreach ($data['tables'] as $d) {
+            $column = $d['name'];
+            $array = explode(" ", $d['name']);
+            $array_quoted = array_map(function ($word) {
+                return '"' . $word . '"';
+            }, $array);
+            $string_with_quotes = implode(",", $array_quoted);
+            $rows[] = $string_with_quotes;
+        }
+        $rows = trim(implode(",", $rows));
         $indexTemplate = str_replace(
             [
                 '{{modelName}}',
                 '{{modelNamePlural}}',
-                '{{modelNameSingular}}'
+                '{{modelNameSingular}}',
+                'TableHead'
             ],
             [
                 $data['model'],
@@ -195,8 +206,9 @@ class CrudController extends Controller
             'singular' => 'required|unique:cruds,singular',
             'tables' => 'required',
         ]);
-        $this->generateModel($data);
+        $this->viewIndex($data);
         Crud::create($data);
+        $this->generateModel($data);
         $this->createMigration($data);
         $this->generateModel($data);
         $this->generateController($data);
