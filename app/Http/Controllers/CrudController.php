@@ -87,7 +87,7 @@ class CrudController extends Controller
         if (!file_exists(resource_path("/views/backend/" . $data['singular']))) {
             mkdir(resource_path("/views/backend/" . $data['singular']));
         }
-        file_put_contents(resource_path("/views/backend/{$data['model']}/create.blade.php"), $createTemplate);
+        file_put_contents(resource_path("/views/backend/{$data['singular']}/create.blade.php"), $createTemplate);
     }
     protected function storePermission($data)
     {
