@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 use OwenIt\Auditing\Auditable as AuditableTrait;
 
-class {{modelName}} extends Model implements Auditable
+class Crud extends Model implements Auditable
 {
     use HasFactory, AuditableTrait;
 
-    protected $table = '{{modelNamePlural}}';
+    protected $table = 'cruds';
 
-    protected $fillable = [DummyTable];
+    protected $fillable = ['model', 'plural', 'singular'];
 }
