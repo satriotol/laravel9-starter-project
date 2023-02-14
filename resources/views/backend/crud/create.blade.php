@@ -61,13 +61,17 @@
                                         class="form-control" />
                                 </td>
                                 <td>
-                                    <input type="text" name="tables[0][type]" required placeholder="Masukkan Type"
-                                        class="form-control" />
+                                    <select name="tables[0][type]" class="form-control" required>
+                                        <option value="">Pilih Tipe</option>
+                                        @foreach ($types as $type)
+                                            <option value="{{ $type }}">{{ $type }}</option>
+                                        @endforeach
+                                    </select>
                                 </td>
                                 <td>
-                                    <select name="tables[0][is_null]" required class="form-control select2">
+                                    <select name="tables[0][is_null]" class="form-control">
                                         <option value="0">Tidak</option>
-                                        <option value="1">Ya</option>
+                                        <option value="nullable">Ya</option>
                                     </select>
                                 </td>
                                 <td><button type="button" name="add" id="dynamic-ar"
@@ -91,11 +95,16 @@
             ++i;
             $("#dynamicAddRemove").append(
                 `<tr>'+
-                '<td><input type="text" name="tables[` + i + `][name]" placeholder="Masukkan Nama Tabel" class="form-control" /></td>' +
-                '<td><input type="text" name="tables[` + i + `][type]" placeholder="Masukkan Type" class="form-control" /></td>' +
-                '<td><select name="tables[` + i + `][is_null]" required class="form-control select2">' +
-                    '<option value="0">Tidak</option>' +
-                    '<option value="1">Ya</option>' +
+                '<td><input type="text" required name="tables[` + i + `][name]" placeholder="Masukkan Nama Tabel" class="form-control" /></td>' +
+                '<td><select name="tables[` + i + `][type]" class="form-control" required>' +
+                    '<option value="">Pilih Tipe</option>' +
+                    '@foreach ($types as $type)'+
+                    '<option value="{{ $type }}">{{ $type }}</option>' +
+                    '@endforeach' +
+                '</select></td>' +
+                '<td><select name="tables[` + i + `][is_null]" class="form-control">' +
+                    '<option value="">Tidak</option>' +
+                    '<option value="nullable">Ya</option>' +
                 '</select></td>' +
                 '<td><button type="button" class="btn btn-outline-danger remove-input-field">Hapus</button></td>' +
                 '</tr>`

@@ -136,6 +136,20 @@ class CrudController extends Controller
             File::append($routeFile, $urlRoute);
         }
     }
+    protected function createMigration($data)
+    {
+        foreach ($data['tables'] as $d) {
+            $column = "\$table->{$d['type']}('{$d['name']}')";
+
+            if ($d['is_null']) {
+                $column .= "->{$d['is_null']}()";
+            }
+            $rows[] = $column . ";\n";
+        }
+        $rows = trim(implode(str_repeat(' ', 12), $rows), "\n");
+
+        return $this;
+    }
     public function index()
     {
         $cruds = Crud::paginate();
@@ -143,7 +157,12 @@ class CrudController extends Controller
     }
     public function create()
     {
-        return view('backend.crud.create');
+        $types = [
+            'string',
+            'longText',
+            'unsignedBigInteger'
+        ];
+        return view('backend.crud.create', compact('types'));
     }
     public function store(Request $request)
     {
@@ -153,14 +172,15 @@ class CrudController extends Controller
             'singular' => 'required|unique:cruds,singular',
             'tables' => 'required',
         ]);
+        $this->createMigration($data);
         dd($data);
         Crud::create($data);
-        $this->generateModel($data);
-        $this->generateController($data);
-        $this->viewIndex($data);
-        $this->viewCreate($data);
-        $this->storePermission($data);
-        $this->addRoute($data);
+        // $this->generateModel($data);
+        // $this->generateController($data);
+        // $this->viewIndex($data);
+        // $this->viewCreate($data);
+        // $this->storePermission($data);
+        // $this->addRoute($data);
         session()->flash('success');
         return redirect(route('crud.index'));
     }
