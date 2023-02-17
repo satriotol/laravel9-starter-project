@@ -31,7 +31,8 @@ class CrudController extends Controller
         $types = [
             'string',
             'longText',
-            'unsignedBigInteger'
+            'unsignedBigInteger',
+            'date'
         ];
         return view('backend.crud.create', compact('types'));
     }
