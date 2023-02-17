@@ -33,18 +33,18 @@
                             ]) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('plural', 'Plural') !!}
-                            {!! Form::text('plural', isset($crud) ? $crud->plural : @old('plural'), [
-                                'required',
-                                'placeholder' => 'Masukkan Jamak',
-                                'class' => 'form-control',
-                            ]) !!}
-                        </div>
-                        <div class="form-group">
                             {!! Form::label('singular', 'Singular') !!}
                             {!! Form::text('singular', isset($crud) ? $crud->singular : @old('singular'), [
                                 'required',
                                 'placeholder' => 'Masukkan Tunggal',
+                                'class' => 'form-control',
+                            ]) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('plural', 'Plural') !!}
+                            {!! Form::text('plural', isset($crud) ? $crud->plural : @old('plural'), [
+                                'required',
+                                'placeholder' => 'Masukkan Jamak',
                                 'class' => 'form-control',
                             ]) !!}
                         </div>
