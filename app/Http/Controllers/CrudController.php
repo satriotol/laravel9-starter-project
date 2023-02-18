@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use App\Models\Crud;
 use App\Traits\CrudFunction;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\File;
-use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Str;
 
 class CrudController extends Controller
 {
@@ -40,10 +37,10 @@ class CrudController extends Controller
     {
         $data = $request->validate([
             'model' => 'required|unique:cruds,model',
-            'plural' => 'required|unique:cruds,plural',
             'singular' => 'required|unique:cruds,singular',
             'tables' => 'required',
         ]);
+        $data['plural'] = Str::plural($data['singular']);
         Crud::create($data);
         $this->createMigration($data);
         $this->generateModel($data);
