@@ -60,25 +60,28 @@ trait CrudFunction
     protected function viewCreate($data)
     {
         foreach ($data['tables'] as $d) {
-            if ($d["type"] == "string" && $d["type"] == "") {
-                $first = '<div class="form-group">';
-                $label = "{!! Form::label('{$d['name']}', '{$d['name']}') !!}";
+            $first = '<div class="form-group">';
+            $label = "{!! Form::label('{$d['name']}', '{$d['name']}') !!}";
+            if ($d["type"] == "string" && $d["type"] == "unsignedBigInteger") {
                 $input = "{!! Form::text('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
                     'required',
                     'class' => 'form-control',
                     'placeholder' => 'Masukkan {$d['name']}',
                 ]) !!}";
-                $end = '</div>';
             } elseif ($d['type'] == "longText") {
-                $first = '<div class="form-group">';
-                $label = "{!! Form::label('{$d['name']}', '{$d['name']}') !!}";
                 $input = "{!! Form::textarea('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
                     'required',
                     'class' => 'form-control summernote',
                     'placeholder' => 'Masukkan {$d['name']}',
                 ]) !!}";
-                $end = '</div>';
+            } elseif ($d['type'] == "date") {
+                $input = "{!! Form::date('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
+                    'required',
+                    'class' => 'form-control summernote',
+                    'placeholder' => 'Masukkan {$d['name']}',
+                ]) !!}";
             }
+            $end = '</div>';
             $view[] = $first . $label . $input . $end;
         }
         $view = trim(implode("\n", $view));
