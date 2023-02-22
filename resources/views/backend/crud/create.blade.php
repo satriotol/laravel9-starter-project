@@ -40,14 +40,14 @@
                                 'class' => 'form-control',
                             ]) !!}
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             {!! Form::label('plural', 'Plural') !!}
                             {!! Form::text('plural', isset($crud) ? $crud->plural : @old('plural'), [
                                 'required',
                                 'placeholder' => 'Masukkan Jamak',
                                 'class' => 'form-control',
                             ]) !!}
-                        </div>
+                        </div> --}}
                         <table class="table table-bordered" id="dynamicAddRemove">
                             <tr>
                                 <th>Nama Tabel</th>
