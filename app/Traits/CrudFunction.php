@@ -81,12 +81,13 @@ trait CrudFunction
             }
             $view[] = $first . $label . $input . $end;
         }
-        dd($view);
+        $view = trim(implode("\n", $view));
         $createTemplate = str_replace(
             [
                 '{{modelName}}',
                 '{{modelNamePlural}}',
-                '{{modelNameSingular}}'
+                '{{modelNameSingular}}',
+
             ],
             [
                 $data['model'],
