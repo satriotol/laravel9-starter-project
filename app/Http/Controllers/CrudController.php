@@ -40,9 +40,10 @@ class CrudController extends Controller
             'singular' => 'required|unique:cruds,singular',
             'tables' => 'required',
         ]);
-        $data['plural'] = Str::plural($data['singular']);        
-        Crud::create($data);
+        $data['plural'] = Str::plural($data['singular']);
+        dd($this->viewCreate($data));
         $this->viewCreate($data);
+        Crud::create($data);
         $this->createMigration($data);
         $this->generateModel($data);
         $this->generateModel($data);

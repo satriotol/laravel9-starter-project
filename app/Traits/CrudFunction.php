@@ -62,7 +62,7 @@ trait CrudFunction
         foreach ($data['tables'] as $d) {
             $first = '<div class="form-group">';
             $label = "{!! Form::label('{$d['name']}', '{$d['name']}') !!}";
-            if ($d["type"] == "string" && $d["type"] == "unsignedBigInteger") {
+            if ($d["type"] == "string" || $d["type"] == "unsignedBigInteger") {
                 $input = "{!! Form::text('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
                     'required',
                     'class' => 'form-control',
