@@ -87,12 +87,14 @@ trait CrudFunction
                 '{{modelName}}',
                 '{{modelNamePlural}}',
                 '{{modelNameSingular}}',
+                '{{createForm}}',
 
             ],
             [
                 $data['model'],
                 $data['plural'],
                 $data['singular'],
+                $view
             ],
             file_get_contents(resource_path("stubs/viewCreate.stub"))
         );
