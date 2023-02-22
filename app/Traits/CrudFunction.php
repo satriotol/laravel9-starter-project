@@ -77,7 +77,7 @@ trait CrudFunction
             } elseif ($d['type'] == "date") {
                 $input = "{!! Form::date('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
                     'required',
-                    'class' => 'form-control summernote',
+                    'class' => 'form-control',
                     'placeholder' => 'Masukkan {$d['name']}',
                 ]) !!}";
             }
