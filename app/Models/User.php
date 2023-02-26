@@ -29,6 +29,8 @@ class User extends Authenticatable implements Auditable
         'name',
         'email',
         'password',
+        'last_signin_at',
+        'last_ip_address'
     ];
 
     /**
