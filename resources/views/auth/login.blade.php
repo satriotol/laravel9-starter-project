@@ -171,7 +171,7 @@
                         allowOutsideClick: false
                     });
                     // console.log(this.form);
-                    axios.post('{{ route('login.store') }}', this.form)
+                    axios.post('/login', this.form)
                         .then((res) => {
                             console.log(res);
                             Swal.fire({
@@ -196,7 +196,7 @@
                         });
                 },
                 reloadCaptcha() {
-                    axios.get('{{ route('reloadCaptcha') }}')
+                    axios.get('/reload-captcha')
                         .then((res) => {
                             this.captchaImage = res.data.captcha;
                             console.log(this.captchaImage);

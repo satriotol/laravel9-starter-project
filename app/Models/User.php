@@ -60,10 +60,6 @@ class User extends Authenticatable implements Auditable
     {
         return $this->hasMany(Berita::class, 'verified_by', 'id');
     }
-    public function projects()
-    {
-        return $this->belongsToMany(Project::class);
-    }
 
     public function scopeNotRole(Builder $query, $roles, $guard = null): Builder
     {

@@ -26,25 +26,15 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th>Aktifitas</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($users as $user)
                                     <tr>
-                                        <td>
-                                            {{ $user->name }} <br>
-                                            <div class="badge bg-success">
-                                                Jumlah Projek = {{ $user->projects->count() }}
-                                            </div>
-                                        </td>
+                                        <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->getUserRole($user) }}</td>
-                                        <td>
-                                            <ul class="badge bg-primary">{{ $user->last_signin_at }}</ul> <br>
-                                            <ul class="badge bg-danger">{{ $user->last_ip_address }}</ul>
-                                        </td>
                                         <td>
                                             <form action="{{ route('user.destroy', $user->id) }}" method="post">
                                                 @csrf
