@@ -28,6 +28,18 @@
                         href="{{ route('dashboard') }}"><i class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span></a>
                 </li>
+                @can('project-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['project.*']) }}" href="{{ route('project.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Projek</span></a>
+                    </li>
+                @endcan
+                @can('type-index')
+                    <li>
+                        <a class="side-menu__item {{ active_class(['type.*']) }}" href="{{ route('type.index') }}"><i
+                                class="side-menu__icon fe fe-grid"></i><span class="side-menu__label">Tipe</span></a>
+                    </li>
+                @endcan
                 @canany(['crud-index'])
                     <li class="sub-category">
                         <h3>CRUD</h3>

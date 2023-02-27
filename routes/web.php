@@ -8,6 +8,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 // URL_CRUD_GENERATOR
+use App\Http\Controllers\ProjectUserController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\CrudController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']);
+Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha'])->name('reloadCaptcha');
 Route::post('upload/store', [UploadController::class, 'store'])->name('upload.store');
 Route::delete('revert/image', [UploadController::class, 'revert'])->name('upload.revert');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
@@ -35,6 +38,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('user', UserController::class);
     Route::resource('audit', AuditController::class);
     // CRUD_GENERATOR
+Route::resource('project_user', ProjectUserController::class);
+    Route::resource('project', ProjectController::class);
+    Route::resource('type', TypeController::class);
     Route::resource('crud', CrudController::class);
     Route::get('user/resetPassword/{user}', [UserController::class, 'reset_password'])->name('user.resetPassword');
 });
