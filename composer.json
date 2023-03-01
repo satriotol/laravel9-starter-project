@@ -37,13 +37,13 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "satriotol\\fastcrud\\": "packages/satriotol/fastcrud/src"
+            "Satriotol\\Fastcrud\\": "packages/Satriotol/Fastcrud/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "satriotol\\fastcrud\\": "packages/satriotol/fastcrud/src"
+            "Satriotol\\Fastcrud\\": "packages/Satriotol/Fastcrud/src"
         },
         "files": [
             "app/helpers.php"
