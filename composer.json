@@ -1,8 +1,11 @@
 {
-    "name": "satriotol/fastcrud",
+    "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
@@ -33,12 +36,14 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "satriotol\\fastcrud\\": "packages/satriotol/fastcrud/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "satriotol\\fastcrud\\": "packages/satriotol/fastcrud/src"
         },
         "files": [
             "app/helpers.php"
