@@ -53,7 +53,12 @@ class LoginRequest extends FormRequest
                 'email' => trans('auth.failed'),
             ]);
         }
+        $user = Auth::user();
+        $user->update([
+            'last_signin_at' => now(),
+            'last_ip_address' => request()->ip()
 
+        ]);
         RateLimiter::clear($this->throttleKey());
     }
 

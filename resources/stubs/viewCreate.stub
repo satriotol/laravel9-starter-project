@@ -24,6 +24,7 @@
                         @isset(${{modelNameSingular}})
                             @method('PUT')
                         @endisset
+                        {{createForm}}
                         <div class="text-end">
                             <a class="btn btn-warning" href="{{ route('{{modelNameSingular}}.index') }}">Kembali</a>
                             <button class="btn btn-primary" type="submit">Submit</button>

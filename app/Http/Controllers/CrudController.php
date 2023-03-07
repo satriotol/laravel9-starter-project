@@ -41,13 +41,12 @@ class CrudController extends Controller
             'tables' => 'required',
         ]);
         $data['plural'] = Str::plural($data['singular']);
+        $this->viewCreate($data);
         Crud::create($data);
         $this->createMigration($data);
         $this->generateModel($data);
-        $this->generateModel($data);
         $this->generateController($data);
         $this->viewIndex($data);
-        $this->viewCreate($data);
         $this->addRoute($data);
         $this->storePermission($data);
         session()->flash('success');

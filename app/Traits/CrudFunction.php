@@ -29,7 +29,7 @@ trait CrudFunction
     {
         foreach ($data['tables'] as $d) {
             $column = "<td>{{\${$data['singular']}->{$d['name']}}}</td>";
-            $thead = "<th>{$d['name']}</th>";
+            $thead = "<th>{$d['tampilan']}</th>";
             $rows[] = $column;
             $theadRows[] = $thead;
         }
@@ -59,16 +59,52 @@ trait CrudFunction
     }
     protected function viewCreate($data)
     {
+        foreach ($data['tables'] as $d) {
+            $first = '<div class="form-group">';
+            $label = "{!! Form::label('{$d['name']}', '{$d['tampilan']}') !!}";
+            if ($d['is_file']) {
+                $input = "{!! Form::file('{$d['name']}', [
+                    'required',
+                    'class' => 'form-control upload-filepond',
+                ]) !!}";
+            } else {
+                if ($d["type"] == "string" || $d["type"] == "unsignedBigInteger") {
+                    $input = "{!! Form::text('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
+                        'required',
+                        'class' => 'form-control',
+                        'placeholder' => 'Masukkan {$d['tampilan']}',
+                    ]) !!}";
+                } elseif ($d['type'] == "longText") {
+                    $input = "{!! Form::textarea('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
+                        'required',
+                        'class' => 'form-control summernote',
+                        'placeholder' => 'Masukkan {$d['tampilan']}',
+                    ]) !!}";
+                } elseif ($d['type'] == "date") {
+                    $input = "{!! Form::date('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
+                        'required',
+                        'class' => 'form-control',
+                        'placeholder' => 'Masukkan {$d['tampilan']}',
+                    ]) !!}";
+                }
+            }
+            $end = '</div>';
+            $view[] = $first . $label . $input . $end;
+        }
+        $view = trim(implode("\n", $view));
         $createTemplate = str_replace(
             [
                 '{{modelName}}',
                 '{{modelNamePlural}}',
-                '{{modelNameSingular}}'
+                '{{modelNameSingular}}',
+                '{{createForm}}',
+
             ],
             [
                 $data['model'],
                 $data['plural'],
                 $data['singular'],
+                $view
             ],
             file_get_contents(resource_path("stubs/viewCreate.stub"))
         );
