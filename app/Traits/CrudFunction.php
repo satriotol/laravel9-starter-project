@@ -62,10 +62,16 @@ trait CrudFunction
         foreach ($data['tables'] as $d) {
             $first = '<div class="form-group">';
             $label = "{!! Form::label('{$d['name']}', '{$d['tampilan']}') !!}";
-            if ($d["type"] == "string" || $d["type"] == "unsignedBigInteger") {
+            if ($d["type"] == "string" || $d["type"] == "unsignedBigInteger" && $d['is_file'] == null) {
                 $input = "{!! Form::text('{$d['name']}', isset(\${$data['singular']}) ? \${$data['singular']}->{$d['name']} : @old('{$d['name']}'), [
                     'required',
                     'class' => 'form-control',
+                    'placeholder' => 'Masukkan {$d['tampilan']}',
+                ]) !!}";
+            } elseif ($d['is_file']) {
+                $input = "{!! Form::file('{$d['name']}', [
+                    'required',
+                    'class' => 'form-control upload-filepond',
                     'placeholder' => 'Masukkan {$d['tampilan']}',
                 ]) !!}";
             } elseif ($d['type'] == "longText") {
