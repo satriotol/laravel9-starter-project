@@ -40,16 +40,15 @@ class CrudController extends Controller
             'singular' => 'required|unique:cruds,singular',
             'tables' => 'required',
         ]);
-        // dd($request->all());
         $data['plural'] = Str::plural($data['singular']);
         $this->viewCreate($data);
-        // Crud::create($data);
-        // $this->createMigration($data);
-        // $this->generateModel($data);
-        // $this->generateController($data);
-        // $this->viewIndex($data);
-        // $this->addRoute($data);
-        // $this->storePermission($data);
+        Crud::create($data);
+        $this->createMigration($data);
+        $this->generateModel($data);
+        $this->generateController($data);
+        $this->viewIndex($data);
+        $this->addRoute($data);
+        $this->storePermission($data);
         session()->flash('success');
         return redirect(route('crud.index'));
     }
